@@ -1,0 +1,386 @@
+[
+  {
+    "id": "83194",
+    "name": "Potato",
+    "amount": "1 kg",
+    "price": 500,
+    "from": "Woods of Woodland",
+    "description": "Potatoes for south of tamriel, from the deep wood where it grows abundent. Thou baremost abundent, its hard to got. Thou thy got to pay high price for. Lots of people used to die to get this, now it became easier dur to the rise helpful wood elves"
+  },
+  {
+    "id": "83195",
+    "name": "Golden Apple",
+    "amount": "5 pieces",
+    "price": 1200,
+    "from": "Orchards of Avalon",
+    "description": "Golden Apples from the mystical orchards of Avalon, known for their healing properties and divine taste. Only a few are harvested each year, making them a rare delicacy."
+  },
+  {
+    "id": "83196",
+    "name": "Crimson Berries",
+    "amount": "500 g",
+    "price": 800,
+    "from": "Bloodthorn Forest",
+    "description": "Crimson Berries are known for their vibrant color and potent flavor. Gathered from the depths of Bloodthorn Forest, they are a favorite among alchemists and chefs alike."
+  },
+  {
+    "id": "83197",
+    "name": "Moonlit Mushrooms",
+    "amount": "300 g",
+    "price": 1500,
+    "from": "Lunar Caverns",
+    "description": "Moonlit Mushrooms glow faintly in the dark and are said to enhance one's connection to the lunar energies. Harvested during full moons, they are highly sought after by mystics."
+  },
+  {
+    "id": "83198",
+    "name": "Sunfire Peppers",
+    "amount": "1 kg",
+    "price": 700,
+    "from": "Scorched Plains",
+    "description": "Sunfire Peppers are incredibly spicy and are used in many fiery dishes. Grown in the Scorched Plains, they are a staple in the diets of those who can handle the heat."
+  },
+  {
+    "id": "83199",
+    "name": "Frostleaf Herbs",
+    "amount": "200 g",
+    "price": 900,
+    "from": "Icy Peaks",
+    "description": "Frostleaf Herbs are known for their cooling properties and are often used in potions to reduce fever or inflammation. They are harvested from the highest peaks where the air is thinnest."
+  },
+  {
+    "id": "83200",
+    "name": "Thunderroot",
+    "amount": "1 kg",
+    "price": 1300,
+    "from": "Stormcaller Mountains",
+    "description": "Thunderroot is a rare root vegetable that is said to absorb the energy of thunderstorms. It is a key ingredient in many powerful elixirs and is highly valued by alchemists."
+  },
+  {
+    "id": "83201",
+    "name": "Shadowbloom Flowers",
+    "amount": "10 pieces",
+    "price": 2000,
+    "from": "Darkened Glades",
+    "description": "Shadowbloom Flowers only bloom under the light of a new moon. They are used in rituals to enhance one's stealth and are highly prized by rogues and assassins."
+  },
+  {
+    "id": "83202",
+    "name": "Starfall Nuts",
+    "amount": "500 g",
+    "price": 1100,
+    "from": "Celestial Groves",
+    "description": "Starfall Nuts are said to fall from the heavens during meteor showers. They are known for their rich, buttery flavor and are a favorite among bakers."
+  },
+  {
+    "id": "83203",
+    "name": "Emberfruit",
+    "amount": "1 kg",
+    "price": 1600,
+    "from": "Volcanic Isles",
+    "description": "Emberfruit grows near active volcanoes and is known for its fiery red color and spicy taste. It is often used in dishes that require a bold, intense flavor."
+  },
+  {
+    "id": "83204",
+    "name": "Whispering Wheat",
+    "amount": "2 kg",
+    "price": 600,
+    "from": "Silent Plains",
+    "description": "Whispering Wheat is said to carry the secrets of the wind. It is a staple grain in many cultures and is known for its light, airy texture when baked."
+  },
+  {
+    "id": "83205",
+    "name": "Crystalized Honey",
+    "amount": "500 g",
+    "price": 1800,
+    "from": "Radiant Meadows",
+    "description": "Crystalized Honey is harvested from the hives of radiant bees. It is known for its sweet, crystalline structure and is often used in desserts and healing potions."
+  },
+  {
+    "id": "83206",
+    "name": "Dragonfire Chili",
+    "amount": "300 g",
+    "price": 1400,
+    "from": "Dragon's Breath Valley",
+    "description": "Dragonfire Chili is one of the spiciest peppers known to exist. It is said that only those with the heart of a dragon can handle its intense heat."
+  },
+  {
+    "id": "83207",
+    "name": "Phoenix Feathers",
+    "amount": "10 pieces",
+    "price": 2500,
+    "from": "Ashen Wastelands",
+    "description": "Phoenix Feathers are rare and are said to carry the essence of rebirth. They are often used in high-level enchantments and are highly sought after by mages."
+  },
+  {
+    "id": "83208",
+    "name": "Obsidian Onions",
+    "amount": "1 kg",
+    "price": 900,
+    "from": "Blackened Fields",
+    "description": "Obsidian Onions are known for their dark, glossy skin and sharp flavor. They are a staple in many savory dishes and are believed to have protective properties."
+  },
+  {
+    "id": "83209",
+    "name": "Silverleaf Tea",
+    "amount": "100 g",
+    "price": 1200,
+    "from": "Mystic Highlands",
+    "description": "Silverleaf Tea is made from the leaves of the silverleaf tree, known for its calming properties. It is a favorite among those who seek peace and tranquility."
+  },
+  {
+    "id": "83210",
+    "name": "Gilded Ginger",
+    "amount": "200 g",
+    "price": 1700,
+    "from": "Golden Hills",
+    "description": "Gilded Ginger is a rare spice that adds a golden hue and a unique flavor to any dish. It is often used in celebratory feasts and is a symbol of prosperity."
+  },
+  {
+    "id": "83211",
+    "name": "Ebonwood Bark",
+    "amount": "500 g",
+    "price": 1300,
+    "from": "Shadowed Forests",
+    "description": "Ebonwood Bark is known for its dark color and potent medicinal properties. It is often used in remedies for ailments of the mind and body."
+  },
+  {
+    "id": "83212",
+    "name": "Celestial Carrots",
+    "amount": "1 kg",
+    "price": 800,
+    "from": "Starlit Gardens",
+    "description": "Celestial Carrots are said to be blessed by the stars. They are known for their sweet flavor and are often used in dishes that require a touch of magic."
+  },
+  {
+    "id": "83213",
+    "name": "Frosted Figs",
+    "amount": "500 g",
+    "price": 1500,
+    "from": "Frozen Groves",
+    "description": "Frosted Figs are a rare delicacy that only grow in the coldest regions. They are known for their icy exterior and sweet, juicy interior."
+  },
+  {
+    "id": "83214",
+    "name": "Inferno Peaches",
+    "amount": "1 kg",
+    "price": 1400,
+    "from": "Blazing Orchards",
+    "description": "Inferno Peaches are known for their fiery red color and spicy-sweet flavor. They are often used in dishes that require a bold, intense taste."
+  },
+  {
+    "id": "83215",
+    "name": "Mystic Mint",
+    "amount": "100 g",
+    "price": 1100,
+    "from": "Enchanted Meadows",
+    "description": "Mystic Mint is known for its refreshing flavor and magical properties. It is often used in potions and teas to enhance clarity and focus."
+  },
+  {
+    "id": "83216",
+    "name": "Radiant Radishes",
+    "amount": "1 kg",
+    "price": 700,
+    "from": "Sunlit Fields",
+    "description": "Radiant Radishes are known for their bright color and crisp texture. They are a staple in many salads and are believed to bring joy to those who consume them."
+  },
+  {
+    "id": "83217",
+    "name": "Shadowed Spinach",
+    "amount": "500 g",
+    "price": 900,
+    "from": "Darkened Gardens",
+    "description": "Shadowed Spinach is known for its dark leaves and rich flavor. It is often used in dishes that require a deep, earthy taste."
+  },
+  {
+    "id": "83218",
+    "name": "Twilight Tomatoes",
+    "amount": "1 kg",
+    "price": 1000,
+    "from": "Duskvine Orchards",
+    "description": "Twilight Tomatoes are known for their unique color and sweet flavor. They are often used in dishes that require a touch of elegance and mystery."
+  },
+  {
+    "id": "83219",
+    "name": "Verdant Vanilla",
+    "amount": "200 g",
+    "price": 1600,
+    "from": "Emerald Jungles",
+    "description": "Verdant Vanilla is known for its rich aroma and flavor. It is often used in desserts and is a favorite among bakers and chefs."
+  },
+  {
+    "id": "83220",
+    "name": "Zephyr Zucchini",
+    "amount": "1 kg",
+    "price": 600,
+    "from": "Windwhisper Valleys",
+    "description": "Zephyr Zucchini is known for its light, airy texture and mild flavor. It is often used in dishes that require a subtle, refreshing taste."
+  },
+  {
+    "id": "83221",
+    "name": "Aurora Apples",
+    "amount": "1 kg",
+    "price": 1200,
+    "from": "Northern Lights Orchards",
+    "description": "Aurora Apples are known for their vibrant colors and sweet, crisp flavor. They are often used in desserts and are a favorite among those who appreciate beauty in their food."
+  },
+  {
+    "id": "83222",
+    "name": "Blazing Basil",
+    "amount": "100 g",
+    "price": 1300,
+    "from": "Fiery Fields",
+    "description": "Blazing Basil is known for its spicy flavor and vibrant red color. It is often used in dishes that require a bold, intense taste."
+  },
+  {
+    "id": "83223",
+    "name": "Crimson Carrots",
+    "amount": "1 kg",
+    "price": 800,
+    "from": "Bloodroot Farms",
+    "description": "Crimson Carrots are known for their deep red color and sweet flavor. They are often used in dishes that require a touch of color and sweetness."
+  },
+  {
+    "id": "83224",
+    "name": "Dewdrop Dill",
+    "amount": "100 g",
+    "price": 1100,
+    "from": "Morning Mist Meadows",
+    "description": "Dewdrop Dill is known for its fresh, tangy flavor and is often used in salads and sauces. It is a favorite among those who enjoy a burst of freshness in their meals."
+  },
+  {
+    "id": "83225",
+    "name": "Ethereal Eggplant",
+    "amount": "1 kg",
+    "price": 900,
+    "from": "Mystic Marshes",
+    "description": "Ethereal Eggplant is known for its unique, almost translucent appearance and delicate flavor. It is often used in dishes that require a touch of elegance."
+  },
+  {
+    "id": "83226",
+    "name": "Frostfire Fennel",
+    "amount": "200 g",
+    "price": 1400,
+    "from": "Icy Flames Fields",
+    "description": "Frostfire Fennel is known for its unique combination of cooling and spicy flavors. It is often used in dishes that require a complex, layered taste."
+  },
+  {
+    "id": "83227",
+    "name": "Golden Grapes",
+    "amount": "1 kg",
+    "price": 1500,
+    "from": "Sunlit Vineyards",
+    "description": "Golden Grapes are known for their sweet, rich flavor and are often used in winemaking. They are a favorite among those who appreciate the finer things in life."
+  },
+  {
+    "id": "83228",
+    "name": "Harmony Herbs",
+    "amount": "100 g",
+    "price": 1200,
+    "from": "Serene Gardens",
+    "description": "Harmony Herbs are known for their calming properties and are often used in teas and potions. They are a favorite among those who seek balance and peace."
+  },
+  {
+    "id": "83229",
+    "name": "Infernal Ivy",
+    "amount": "200 g",
+    "price": 1600,
+    "from": "Blazing Cliffs",
+    "description": "Infernal Ivy is known for its fiery red leaves and spicy flavor. It is often used in dishes that require a bold, intense taste."
+  },
+  {
+    "id": "83230",
+    "name": "Jade Jasmine",
+    "amount": "100 g",
+    "price": 1300,
+    "from": "Emerald Terraces",
+    "description": "Jade Jasmine is known for its delicate aroma and is often used in teas and perfumes. It is a favorite among those who appreciate subtle, refined scents."
+  },
+  {
+    "id": "83231",
+    "name": "Kaleidoscope Kale",
+    "amount": "1 kg",
+    "price": 700,
+    "from": "Prism Gardens",
+    "description": "Kaleidoscope Kale is known for its vibrant colors and crisp texture. It is often used in salads and is a favorite among health enthusiasts."
+  },
+  {
+    "id": "83232",
+    "name": "Lunar Lavender",
+    "amount": "100 g",
+    "price": 1400,
+    "from": "Moonlit Meadows",
+    "description": "Lunar Lavender is known for its calming properties and is often used in teas and potions. It is a favorite among those who seek peace and tranquility."
+  },
+  {
+    "id": "83233",
+    "name": "Mystic Marjoram",
+    "amount": "100 g",
+    "price": 1100,
+    "from": "Enchanted Gardens",
+    "description": "Mystic Marjoram is known for its unique flavor and is often used in dishes that require a touch of magic. It is a favorite among chefs and alchemists alike."
+  },
+  {
+    "id": "83234",
+    "name": "Nebula Nectarines",
+    "amount": "1 kg",
+    "price": 1500,
+    "from": "Starlit Orchards",
+    "description": "Nebula Nectarines are known for their sweet, juicy flavor and are often used in desserts. They are a favorite among those who appreciate the beauty of the stars."
+  },
+  {
+    "id": "83235",
+    "name": "Obsidian Oregano",
+    "amount": "100 g",
+    "price": 1200,
+    "from": "Blackened Cliffs",
+    "description": "Obsidian Oregano is known for its dark color and bold flavor. It is often used in dishes that require a deep, earthy taste."
+  },
+  {
+    "id": "83236",
+    "name": "Phoenix Peppers",
+    "amount": "300 g",
+    "price": 1400,
+    "from": "Ashen Fields",
+    "description": "Phoenix Peppers are known for their fiery red color and intense heat. They are often used in dishes that require a bold, spicy flavor."
+  },
+  {
+    "id": "83237",
+    "name": "Quicksilver Quinoa",
+    "amount": "1 kg",
+    "price": 1000,
+    "from": "Mercury Meadows",
+    "description": "Quicksilver Quinoa is known for its light, fluffy texture and is often used in salads and side dishes. It is a favorite among health-conscious individuals."
+  },
+  {
+    "id": "83238",
+    "name": "Radiant Rosemary",
+    "amount": "100 g",
+    "price": 1300,
+    "from": "Sunlit Gardens",
+    "description": "Radiant Rosemary is known for its vibrant aroma and is often used in dishes that require a touch of freshness. It is a favorite among chefs and home cooks alike."
+  },
+  {
+    "id": "83239",
+    "name": "Starlight Sage",
+    "amount": "100 g",
+    "price": 1400,
+    "from": "Celestial Gardens",
+    "description": "Starlight Sage is known for its calming properties and is often used in teas and potions. It is a favorite among those who seek peace and tranquility."
+  },
+  {
+    "id": "83240",
+    "name": "Thunder Thyme",
+    "amount": "100 g",
+    "price": 1100,
+    "from": "Stormcaller Cliffs",
+    "description": "Thunder Thyme is known for its bold flavor and is often used in dishes that require a touch of intensity. It is a favorite among those who enjoy a robust taste."
+  },
+  {
+    "id": "83241",
+    "name": "Umbral Umeboshi",
+    "amount": "500 g",
+    "price": 1500,
+    "from": "Shadowed Orchards",
+    "description": "Umbral Umeboshi are known for their unique flavor and are often used in traditional dishes. They are a favorite among those who appreciate the art of preservation."
+  }
+]
