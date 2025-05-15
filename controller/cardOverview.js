@@ -13,6 +13,7 @@ const productPage = fs.readFileSync(
 
 const replaceTemplate = (template, product) => {
   let output = template;
+  output = output.replace(/{%PRODUCT_NAME%}/g, product.name);
   output = output.replace(/{%PRODUCT_DETAILS%}/g, product.description);
   output = output.replace(/{%ID%}/g, product.id);
   output = output.replace(/{%PRODUCT_IMAGE%}/g, product.image || 'default.png');

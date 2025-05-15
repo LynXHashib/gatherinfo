@@ -5,7 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gather Product</title>
     <link rel="icon" href="/base-images/favicon.png" />
-    <link rel="stylesheet" href="/home/style.css" />
+
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      p,
+      ul,
+      li,
+      a {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #f5f6fa;
+        color: #222;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Header styles */
+      .main-header {
+        background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+        color: #fff;
+        padding: 0.7rem 0 0.3rem 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+      }
+
+      .header-content {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .main-header h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        margin-bottom: 0.1rem;
+      }
+
+      .main-header p {
+        font-size: 1.3rem;
+        opacity: 0.95;
+      }
+
+      /* Main content styles */
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0.5rem 0.2rem;
+      }
+
+      #title {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0;
+      }
+
+      main img {
+        width: 420px;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(80, 80, 120, 0.1);
+        margin-bottom: 0.7rem;
+        background: #eaeaea;
+      }
+
+      #productFull {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(80, 80, 120, 0.07);
+        padding: 1.5rem 1.2rem;
+        max-width: 600px;
+        width: 100%;
+        font-size: 1.35rem;
+        line-height: 1.7;
+        color: #333;
+        text-align: left;
+      }
+
+      /* Footer styles */
+      footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 0.5rem 0;
+        margin-top: auto;
+        font-size: 1.1rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 700px) {
+        main img {
+          width: 98vw;
+          height: 54vw;
+          max-width: 98vw;
+          max-height: 54vw;
+        }
+        #productFull {
+          padding: 0.8rem 0.4rem;
+          font-size: 1.05rem;
+        }
+        #title {
+          font-size: 1.3rem;
+        }
+        .main-header h1 {
+          font-size: 1.7rem;
+        }
+        .main-header p {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="main-header">
@@ -18,7 +138,8 @@
     </header>
 
     <main>
-      <img src="/public/productImage/{%PRODUCT_IMAGE%}" alt="Image" />
+      <h2 id="title" style="padding-bottom: 10px">{%PRODUCT_NAME%}</h2>
+      <img src="/productImage/{%PRODUCT_IMAGE%}" alt="Image" />
       <div id="productFull">{%PRODUCT_DETAILS%}</div>
     </main>
 
