@@ -22,6 +22,9 @@ const replaceTemplate = (template, product) => {
 
 const cardOverview = (req, res) => {
   const id = req.query.id;
+  console.log(id);
+  console.log(req.url);
+
   const product = dataObj.find((el) => el.id === id);
 
   if (!product) {

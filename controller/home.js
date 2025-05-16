@@ -17,11 +17,16 @@ const tempCard = fs.readFileSync(
 );
 
 const replaceTemplate = (template, product) => {
-  let output = template.replace(/{%IMAGE%}/g, product.image);
+  let output = template.replace(/{%IMAGE%}/g, product.image || 'default.png');
   output = output.replace(/{%PRODUCTNAME%}/g, product.name);
   output = output.replace(/{%QUANTITY%}/g, product.amount);
   output = output.replace(/{%PRICE%}/g, product.price);
   output = output.replace(/{%ID%}/g, product.id);
+  const shortDesc = product.description
+    ? product.description.slice(0, 80) +
+      (product.description.length > 80 ? '...' : '')
+    : '';
+  output = output.replace(/{%SHORT_DESCRIPTION%}/g, shortDesc);
   return output;
 };
 
