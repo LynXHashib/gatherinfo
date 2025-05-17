@@ -23,8 +23,8 @@ const replaceTemplate = (template, product) => {
   output = output.replace(/{%PRICE%}/g, product.price);
   output = output.replace(/{%ID%}/g, product.id);
   const shortDesc = product.description
-    ? product.description.slice(0, 80) +
-      (product.description.length > 80 ? '...' : '')
+    ? product.description.slice(0, 120) +
+      (product.description.length > 120 ? '...' : '')
     : '';
   output = output.replace(/{%SHORT_DESCRIPTION%}/g, shortDesc);
   return output;
@@ -32,7 +32,11 @@ const replaceTemplate = (template, product) => {
 
 const home = (req, res) => {
   console.log(req.url);
-  const cardsHtml = dataObj.map((el) => replaceTemplate(tempCard, el)).join('');
+  const cardsHtml = dataObj
+    .slice()
+    .reverse()
+    .map((el) => replaceTemplate(tempCard, el))
+    .join('');
   const output = homeTemp.replace('{%PRODUCT_CARDS%}', cardsHtml);
   res.status(200).send(output);
 };

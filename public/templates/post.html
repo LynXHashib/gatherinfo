@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POST A NEWS</title>
+    <link rel="stylesheet" href="../home/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-content">
+        <a href="/" style="text-decoration: none; color: white">
+          <h1>GatherInfo</h1>
+        </a>
+        <p>Your one-stop destination for everything</p>
+        <nav class="main-nav">
+          <a href="/api/contacts">Contacts</a>
+          <a href="/about">About Me</a>
+          <a href="/post">Post</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <form class="post-form" method="POST" action="/post">
+        <input
+          type="text"
+          id="post-in"
+          class="post-title"
+          name="title"
+          placeholder="Title"
+        />
+        <textarea
+          type="text"
+          id="post-in"
+          class="post-input"
+          name="description"
+          rows="6"
+          placeholder="Write your POST..."
+        ></textarea>
+        <button type="submit" class="post-btn">Submit</button>
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2023 Gather Product. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
