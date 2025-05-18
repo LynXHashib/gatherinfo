@@ -11,6 +11,10 @@ const blogPost = new mongoose.Schema({
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+    required: true,
+  },
   date: Date,
 });
 const users = new mongoose.Schema(

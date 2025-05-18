@@ -239,6 +239,23 @@ footer {
   border-color: #2575fc;
 }
 
+.post-image-input {
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 0.5em 1em;
+  border: 1.5px solid #6a11cb;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 1em;
+  color: #333;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+.post-image-input:focus {
+  border-color: #2575fc;
+}
+
 .post-btn {
   width: 60%;
   min-width: 120px;
@@ -365,8 +382,8 @@ footer {
   margin-left: 0;
 }
 .product-description-row {
-  width: 96%;
-  margin: 2% 2% 0 2%;
+  width: 92%;
+  margin: 2% 2% 2% 2%;
   padding: 2% 2%;
   background: #fff;
   border-radius: 3%;
