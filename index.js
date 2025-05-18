@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Analytics = require('@vercel/analytics');
 const express = require('express');
 const path = require('path');
@@ -10,8 +9,8 @@ const mongodb = process.env.MONGO;
 //      DATABASE
 
 mongoose
-  .connect(`${mongodb}`)
-  .then(console.log(`Connected Successfully`))
+  .connect(mongodb)
+  .then(() => console.log(`Connected Successfully`))
   .catch((err) => {
     console.log(`Error : `, err);
   });
