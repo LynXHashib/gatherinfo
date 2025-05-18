@@ -3,7 +3,15 @@ const Analytics = require('@vercel/analytics');
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
-mongoose.connect(`mongodb://127.0.0.1/database`);
+
+//      DATABASE
+
+mongoose
+  .connect(`mongodb://127.0.0.1:27017/gatherinfo`)
+  .then(console.log(`Connected Successfully`))
+  .catch((err) => {
+    console.log(`Error : `, err);
+  });
 
 //      ROUTES
 
@@ -20,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //      PAGES
-
+``;
 app.use('/', home);
 app.use('/info', cardRoute);
 app.use('/post', postRoute);

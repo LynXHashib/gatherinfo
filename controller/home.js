@@ -1,12 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 const Analytics = require('@vercel/analytics');
-const data = fs.readFileSync(
-  path.join(__dirname, '..', 'database', 'cards.json'),
-  'utf-8'
-);
-const dataObj = JSON.parse(data);
-
+const { default: mongoose } = require('mongoose');
+const { blogPost, users } = require('../database/models');
+const Blog = mongoose.model('blogs', blogPost);
 const homeTemp = fs.readFileSync(
   path.join(__dirname, '..', 'public', 'home', 'app.html'),
   'utf-8'
@@ -18,10 +15,10 @@ const tempCard = fs.readFileSync(
 
 const replaceTemplate = (template, product) => {
   let output = template.replace(/{%IMAGE%}/g, product.image || 'default.png');
-  output = output.replace(/{%PRODUCTNAME%}/g, product.name);
-  output = output.replace(/{%QUANTITY%}/g, product.amount);
-  output = output.replace(/{%PRICE%}/g, product.price);
-  output = output.replace(/{%ID%}/g, product.id);
+  output = output.replace(/{%PRODUCTNAME%}/g, product.title);
+  output = output.replace(/{%QUANTITY%}/g, '');
+  output = output.replace(/{%PRICE%}/g, '');
+  output = output.replace(/{%ID%}/g, String(product._id));
   const shortDesc = product.description
     ? product.description.slice(0, 120) +
       (product.description.length > 120 ? '...' : '')
@@ -30,11 +27,10 @@ const replaceTemplate = (template, product) => {
   return output;
 };
 
-const home = (req, res) => {
+const home = async (req, res) => {
   console.log(req.url);
-  const cardsHtml = dataObj
-    .slice()
-    .reverse()
+  const blogsWait = await Blog.find();
+  const cardsHtml = blogsWait
     .map((el) => replaceTemplate(tempCard, el))
     .join('');
   const output = homeTemp.replace('{%PRODUCT_CARDS%}', cardsHtml);

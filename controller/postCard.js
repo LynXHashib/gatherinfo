@@ -1,35 +1,26 @@
-const { CONNREFUSED } = require('dns');
 const path = require('path');
-const fs = require('fs');
-const dataPath = path.join(__dirname, '..', 'database', 'cards.json');
-const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
-const postCard = (req, res) => {
+const postHtml = path.join(__dirname, '../public/templates/post.html');
+const { blogPost, users } = require('../database/models');
+const { default: mongoose } = require('mongoose');
+
+const Blog = mongoose.model('blogs', blogPost);
+const postCard = async (req, res) => {
   if (req.method === 'POST') {
     const description = req.body.description;
     const title = req.body.title;
-    if (description && title) {
-      let lastID = 0;
-      data.forEach((element) => {
-        if (Number(element.id) > lastID) {
-          lastID = Number(element.id);
-        }
-      });
-      const newID = lastID + 1;
-      console.log(newID);
-      const jsonData = {
-        id: newID.toString(),
-        name: title,
-        description: description,
-      };
-      data.push(jsonData);
-      fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
-      console.log(`Received`, description);
-      res.send(`POST received! ${description}`);
+
+    if (!description && !title) {
+      console.log('No input');
+      res.status(400).send('No input');
     } else {
-      res.send('Failed');
+      await Blog.create({
+        title: title,
+        description: description,
+      });
+      res.status(201).send('Success');
     }
   } else {
-    res.sendFile(path.join(__dirname, '../public/templates/post.html'));
+    res.sendFile(postHtml);
   }
 };
 
