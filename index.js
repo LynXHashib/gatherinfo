@@ -3,13 +3,14 @@ const Analytics = require('@vercel/analytics');
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
+
+const mongodb = process.env.MONGO;
 
 //      DATABASE
 
 mongoose
-  .connect(
-    `mongodb+srv://hashib4305:hashibboss123@gatherinfo.m2rhm1f.mongodb.net/?retryWrites=true&w=majority&appName=gatherinfo`
-  )
+  .connect(`${mongodb}`)
   .then(console.log(`Connected Successfully`))
   .catch((err) => {
     console.log(`Error : `, err);
