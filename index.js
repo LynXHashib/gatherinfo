@@ -7,7 +7,9 @@ const mongoose = require('mongoose');
 //      DATABASE
 
 mongoose
-  .connect(`mongodb://127.0.0.1:27017/gatherinfo`)
+  .connect(
+    `mongodb+srv://hashib4305:hashibboss123@gatherinfo.m2rhm1f.mongodb.net/?retryWrites=true&w=majority&appName=gatherinfo`
+  )
   .then(console.log(`Connected Successfully`))
   .catch((err) => {
     console.log(`Error : `, err);
