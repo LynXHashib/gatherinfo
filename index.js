@@ -30,7 +30,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //      PAGES
-``;
 app.use('/', home);
 app.use('/info', cardRoute);
 app.use('/post', postRoute);
