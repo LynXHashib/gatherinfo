@@ -16,7 +16,7 @@ body {
 }
 
 .header-content h1 {
-  font-size: 3rem;
+  font-size: 80px;
   margin: 0;
   font-weight: bold;
 }
@@ -31,7 +31,11 @@ body {
 main {
   padding: 40px 20px;
 }
-
+#hiddenmsg {
+  text-align: center;
+  background: burlywood;
+  margin: 5px 35% 0px 35%;
+}
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

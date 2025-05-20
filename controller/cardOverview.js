@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
-const { blogPost, users } = require('../database/models');
+const { blogSchema, userSchema } = require('../database/models');
 
-const blog = mongoose.model('blogs', blogPost);
+const blog = mongoose.model('blogs', blogSchema);
 
 const productPage = fs.readFileSync(
   path.join(__dirname, '..', 'public', 'templates', 'productPage.html'),

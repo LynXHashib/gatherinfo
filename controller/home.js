@@ -2,8 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const Analytics = require('@vercel/analytics');
 const { default: mongoose } = require('mongoose');
-const { blogPost, users } = require('../database/models');
-const Blog = mongoose.model('blogs', blogPost);
+const { blogSchema, userSchema } = require('../database/models');
+const Blog = mongoose.model('blogs', blogSchema);
 const homeTemp = fs.readFileSync(
   path.join(__dirname, '..', 'public', 'home', 'app.html'),
   'utf-8'
@@ -29,11 +29,19 @@ const replaceTemplate = (template, product) => {
 
 const home = async (req, res) => {
   console.log(req.url);
+  const uid = req.cookies.uid;
   const blogsWait = await Blog.find();
   const cardsHtml = blogsWait
     .map((el) => replaceTemplate(tempCard, el))
     .join('');
-  const output = homeTemp.replace('{%PRODUCT_CARDS%}', cardsHtml);
+  const message = req.query.msg ? req.query.msg : '';
+  const isLoggedIn = uid ? true : false;
+  console.log(isLoggedIn);
+
+  let output = homeTemp.replace('{%PRODUCT_CARDS%}', cardsHtml);
+  output = output.replace('{%LOGIN%}', isLoggedIn ? '' : 'Login');
+  output = output.replace('{%SIGNUP%}', isLoggedIn ? '' : 'Sign Up');
+  output = output.replace('{%HIDDEN_MESSAGE%}', message);
   res.status(200).send(output);
 };
 

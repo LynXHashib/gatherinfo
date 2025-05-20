@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.ObjectId;
-const blogPost = new mongoose.Schema({
+const blogSchema = new mongoose.Schema({
   id: ObjectId,
   title: {
     type: String,
@@ -17,14 +17,14 @@ const blogPost = new mongoose.Schema({
   },
   date: Date,
 });
-const users = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     id: ObjectId,
-    firstname: {
+    firstName: {
       type: String,
       required: true,
     },
-    lastname: {
+    lastName: {
       type: String,
     },
     email: {
@@ -32,7 +32,11 @@ const users = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    password: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
-module.exports = { blogPost, users };
+module.exports = { blogSchema, userSchema };

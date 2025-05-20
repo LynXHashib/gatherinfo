@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | GatherInfo</title>
+    <link rel="stylesheet" href="/home/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-content">
+        <a href="/"><h1>GatherInfo</h1></a>
+        <p>Create your GatherInfo account</p>
+        <h1>Sign Up</h1>
+      </div>
+    </header>
+    <main>
+      <form
+        class="post-form"
+        action="/user/signup"
+        method="post"
+        style="max-width: 400px"
+      >
+        <input
+          type="text"
+          name="firstName"
+          class="post-title"
+          placeholder="First Name"
+          required
+        />
+        <input
+          type="text"
+          name="lastName"
+          class="post-title"
+          placeholder="Last Name"
+        />
+        <input
+          type="email"
+          name="email"
+          class="post-title"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          class="post-title"
+          placeholder="Password"
+          required
+        />
+        <button type="submit" class="post-btn">Sign Up</button>
+      </form>
+    </main>
+    <footer>&copy; 2025 GatherInfo</footer>
+  </body>
+</html>
