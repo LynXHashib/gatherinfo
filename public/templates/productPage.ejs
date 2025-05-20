@@ -1,0 +1,39 @@
+<!-- filepath: /home/hashib/Project/ActualApps/Web/GatherInfo/public/templates/productPage.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      <%= typeof productName !== 'undefined' ? productName : 'Gather Product' %>
+    </title>
+    <link rel="icon" href="/base-images/favicon.png" />
+    <link rel="stylesheet" href="/home/style.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-60DHQDCMW1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-60DHQDCMW1');
+    </script>
+  </head>
+  <body>
+    <%- include('header.ejs') %>
+    <div class="product-title"><%= productName %></div>
+    <div class="product-row">
+      <div class="product-image-box">
+        <img src="/productImage/<%= productImage %>" alt="<%= productName %>" />
+      </div>
+      <div class="ad-space">
+        <!-- Optional ad or info space -->
+      </div>
+    </div>
+    <div class="product-description-row"><%= productDetails %></div>
+    <%- include('footer.ejs') %>
+  </body>
+</html>

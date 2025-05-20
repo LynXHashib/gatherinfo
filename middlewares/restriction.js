@@ -5,7 +5,7 @@ const restrictToLogin = (req, res, next) => {
 };
 
 const authCheck = (req, res, next) => {
-  req.user = req.session.user || null;
+  res.locals.isLoggedIn = !!req.session.user;
   next();
 };
 

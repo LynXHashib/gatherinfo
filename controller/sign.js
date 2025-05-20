@@ -1,13 +1,9 @@
 const { default: mongoose } = require('mongoose');
 const { userSchema } = require('../database/models');
-const path = require('path');
-const signPage = path.join(__dirname, '../public/templates/signup.html');
-const loginPage = path.join(__dirname, '../public/templates/login.html');
 const users = mongoose.model('users', userSchema);
 
 const signUp = async (req, res) => {
   if (req.method == 'POST') {
-    console.log(req.url);
     if (!req.body.firstName || !req.body.email || !req.body.password) {
       return res.status(400).redirect('/?msg=SignUp+failed');
     }
@@ -17,19 +13,15 @@ const signUp = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    const sessionID = uuidv4();
     req.session.user = user;
-    return res
-      .status(201)
-      .cookie('uid', sessionID)
-      .redirect('/?msg=Signed+UP+successfully!');
+    return res.status(201).redirect('/?msg=Signed+UP+successfully!');
   } else {
-    res.status(200).sendFile(signPage);
+    res.status(200).render('signup');
   }
 };
+
 const login = async (req, res) => {
   if (req.method == 'POST') {
-    console.log(req.url);
     if (!req.body.email || !req.body.password) {
       return res.status(400).redirect('/?msg=Login+failed');
     }
@@ -40,16 +32,16 @@ const login = async (req, res) => {
     if (!user) {
       return res.status(400).redirect('/?msg=Login+failed');
     }
-    const sessionID = uuidv4();
     req.session.user = user;
-
-    return res
-      .status(201)
-      .cookie('uid', sessionID)
-      .redirect('/?msg=Login+Successful');
+    return res.status(201).redirect('/?msg=Login+Successful');
   } else {
-    res.status(200).sendFile(loginPage);
+    res.status(200).render('login');
   }
 };
-
-module.exports = { signUp, login };
+const logout = async (req, res) => {
+  req.session.destroy(() => {
+    res.clearCookie('connect.sid');
+    res.redirect('/?msg=Logout+Successful');
+  });
+};
+module.exports = { signUp, login, logout };

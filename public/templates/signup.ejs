@@ -7,13 +7,7 @@
     <link rel="stylesheet" href="/home/style.css" />
   </head>
   <body>
-    <header class="main-header">
-      <div class="header-content">
-        <a href="/"><h1>GatherInfo</h1></a>
-        <p>Create your GatherInfo account</p>
-        <h1>Sign Up</h1>
-      </div>
-    </header>
+    <%- include('header.ejs') %>
     <main>
       <form
         class="post-form"
@@ -51,6 +45,6 @@
         <button type="submit" class="post-btn">Sign Up</button>
       </form>
     </main>
-    <footer>&copy; 2025 GatherInfo</footer>
+    <%- include('footer.ejs') %>
   </body>
 </html>
