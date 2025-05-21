@@ -6,8 +6,6 @@ const { blogSchema } = require('../database/models');
 const Blog = mongoose.model('blogs', blogSchema);
 
 const home = async (req, res) => {
-  console.log(req.session.user);
-
   const blogs = await Blog.find();
   const message = req.query.msg || '';
   const isLoggedIn = req.session.user ? true : false;

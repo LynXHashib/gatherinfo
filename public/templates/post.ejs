@@ -9,12 +9,17 @@
   <body>
     <%- include('header.ejs') %>
     <main>
-      <form class="post-form" method="POST" action="/post">
+      <form
+        class="post-form"
+        method="POST"
+        action="/post/<%= POST %>?id=<%= ID%>"
+      >
         <input
           type="text"
           id="post-in"
           class="post-title"
           name="title"
+          value="<%= TITLE %>"
           placeholder="Title"
           required
         />
@@ -25,11 +30,14 @@
           rows="6"
           placeholder="Write your POST..."
           required
-        ></textarea>
+        >
+<%= VALUE %></textarea
+        >
         <input
           type="text"
           id="post-image"
           class="post-image-input"
+          value="<%= IMAGE %>"
           name="image"
           placeholder="IMAGE NAME"
         />

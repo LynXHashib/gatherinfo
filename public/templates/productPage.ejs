@@ -33,7 +33,20 @@
         <!-- Optional ad or info space -->
       </div>
     </div>
-    <div class="product-description-row"><%= productDetails %></div>
+    <div class="product-description-row">
+      <%= productDetails %> <% if (isAuthor) { %>
+      <div class="author-actions">
+        <a href="/post/edit?id=<%= productId %>" class="author-link edit-link"
+          >Edit</a
+        >
+        <a
+          href="/post/delete?id=<%= productId %>"
+          class="author-link delete-link"
+          >Delete</a
+        >
+      </div>
+      <% } %>
+    </div>
     <%- include('footer.ejs') %>
   </body>
 </html>

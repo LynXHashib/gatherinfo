@@ -1,12 +1,13 @@
 {
   "name": "project2",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
+    "nmn": "nodemon server.js",
     "go": "node server.js",
-    "scss": "sass ./public/home/style.scss ./public/home/style.css"
+    "scss": "sass ./public/home/style.scss ./public/home/style.css",
+    "start": "concurrently \"nodemon server.js\" \"npm run scss -- --watch\""
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "mongoose": "^8.15.0"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "nodemon": "^3.1.10",
     "sass": "^1.89.0"
   },

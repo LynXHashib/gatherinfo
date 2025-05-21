@@ -385,6 +385,47 @@ footer {
   letter-spacing: 1px;
 }
 
+// Author Actions Styles
+.author-actions {
+  margin-top: 2em;
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.author-link,
+.author-actions .author-link,
+.author-actions button.author-link {
+  background: none;
+  border: none;
+  color: $primary-dark;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+  box-shadow: none;
+  display: inline;
+}
+
+.edit-link {
+  color: $secondary;
+}
+.edit-link:hover {
+  color: $primary-accent;
+  text-decoration: underline;
+}
+
+.delete-link {
+  color: #d9534f;
+}
+.delete-link:hover {
+  color: #b52a23;
+  text-decoration: underline;
+}
+
 // Responsive
 @media (max-width: 1000px) {
   .product-grid {
