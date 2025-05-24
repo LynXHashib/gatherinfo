@@ -28,6 +28,8 @@ const cardRoute = require('./routes/cardRoute');
 const signRoute = require('./routes/signRoute');
 const error404 = require('./controller/404');
 
+//  LOG
+
 const app = express();
 app.use(
   session({

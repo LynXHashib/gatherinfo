@@ -1,3 +1,4 @@
+const { name } = require('ejs');
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.ObjectId;
 
@@ -23,7 +24,6 @@ const blogSchema = new mongoose.Schema({
 });
 const userSchema = new mongoose.Schema(
   {
-    id: ObjectId,
     firstName: {
       type: String,
       required: true,
@@ -43,4 +43,20 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-module.exports = { blogSchema, userSchema };
+const commentSchema = new mongoose.Schema({
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'users',
+  },
+  postId: {
+    type: String,
+    required: true,
+  },
+
+  comment: {
+    type: String,
+    required: true,
+  },
+  date: Date,
+});
+module.exports = { blogSchema, userSchema, commentSchema };

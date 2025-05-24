@@ -7,10 +7,9 @@ const Blog = mongoose.model('blogs', blogSchema);
 const postCard = async (req, res) => {
   if (req.method === 'POST') {
     const { description, title, image } = req.body;
-    const author = req.session.user
-      ? req.session.user.firstName + ' ' + req.session.user.lastName
-      : null;
-    if (!description || !title || !author) {
+    const author = req.session.user.firstName + ' ' + req.session.user.lastName;
+
+    if (!description || !title) {
       res.status(400).redirect('/?msg=Post+creation+failed');
     } else {
       await Blog.create({ author, title, description, image });
@@ -57,5 +56,6 @@ const postDelete = async (req, res) => {
   const id = req.query.id;
   const author = req.session.user.firstName + ' ' + req.session.user.lastName;
   await Blog.deleteOne({ _id: id, author: author });
+  res.redirect('/?msg=Post+Deleted');
 };
 module.exports = { postCard, postEdit, postDelete };

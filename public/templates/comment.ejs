@@ -1,0 +1,28 @@
+<section class="comment-section">
+  <h2>Leave a Comment</h2>
+  <form action="/info/comment?id=<%= ID %>" method="POST" class="comment-form">
+    <% if(!isLoggedIn){ %>
+    <input type="text" name="name" placeholder="Your name" required />
+    <input type="text" name="email" placeholder="Your Email" required />
+    <input type="password" name="password" placeholder="password" required />
+    <% }%>
+    <textarea
+      name="comment"
+      rows="4"
+      placeholder="Your comment..."
+      required
+    ></textarea>
+    <button type="submit">Post Comment</button>
+  </form>
+
+  <div class="comments-list">
+    <% if (comments.length > 0) { %> <% comments.forEach(comment => { %>
+    <div class="comment">
+      <h4><%= comment.createdBy?.firstName || 'Anonymous' %></h4>
+      <p><%= comment.comment %></p>
+    </div>
+    <% }) %> <% } else { %>
+    <p class="no-comments">No comments yet. Be the first to comment!</p>
+    <% } %>
+  </div>
+</section>
