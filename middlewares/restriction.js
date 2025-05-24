@@ -1,7 +1,6 @@
 const restrictToLogin = (req, res, next) => {
   if (!req.session.user) return res.redirect('/user/login');
   req.user = req.session.user;
-  console.log(typeof req.session.user._id);
 
   next();
 };

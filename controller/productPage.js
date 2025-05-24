@@ -14,7 +14,6 @@ const cardOverview = async (req, res) => {
   if (!blogWait) {
     return res.status(404).render('404');
   }
-  id = req.session.user._id;
   const comment = await comments
     .find({ postId: blogWait._id })
     .populate('createdBy');

@@ -8,7 +8,6 @@ const Blog = mongoose.model('blogs', blogSchema);
 const home = async (req, res) => {
   const blogs = await Blog.find();
   const message = req.query.msg || '';
-  console.log(req.session.user._id);
 
   const isLoggedIn = req.session.user ? true : false;
 
