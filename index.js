@@ -52,7 +52,7 @@ app.use(authCheck);
 app.use('/', home);
 app.use('/info', cardRoute);
 app.use('/post', restrictToLogin, postRoute);
-app.use('/user', restrictToLogin, signRoute);
+app.use('/user', signRoute);
 app.use('/api/contacts', contacts);
 app.use(error404);
 
