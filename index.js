@@ -33,11 +33,11 @@ const error404 = require('./controller/404');
 const app = express();
 app.use(
   session({
-    secret: 'your-secret',
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: mongodb }),
-    cookie: { secure: false },
+    cookie: { secure: false, maxAge: 86400000 },
   })
 );
 app.set('view engine', 'ejs');
