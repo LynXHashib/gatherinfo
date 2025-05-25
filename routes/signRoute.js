@@ -6,5 +6,5 @@ const router = express.Router();
 router.route('/signup').get(signUp).post(signUp);
 router.route('/login').get(login).post(login);
 router.route('/logout').get(logout).post(logout);
-router.route('/', restrictToLogin).get(userProfile).post(userDescriptionEdit);
+router.route('/').get(userProfile).post(userDescriptionEdit);
 module.exports = router;

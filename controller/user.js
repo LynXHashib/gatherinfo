@@ -11,11 +11,8 @@ const userProfile = async (req, res) => {
 };
 const userDescriptionEdit = async (req, res) => {
   const id = req.session.user._id;
-  const user = await userDB.find(id);
-  const userInfo = req.body;
-  user.userinfo = userInfo;
-  res.render('user', {
-    user,
-  });
+  const userInfo = req.body.description;
+  await userDB.findByIdAndUpdate(id, { userinfo: userInfo });
+  res.redirect('/user');
 };
 module.exports = { userProfile, userDescriptionEdit };

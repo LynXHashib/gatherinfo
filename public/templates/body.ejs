@@ -1,7 +1,8 @@
 <section class="hero">
   <div class="hero-content">
-    <h1>GatherInfo</h1>
-    <p>Discover, share, and discuss the latest insights and products.</p>
+    <h2 id="hoverToChange">
+      Discover,share,and discuss all the latest insights and products.
+    </h2>
     <% if (!isLoggedIn) { %>
     <a href="/user/signup" class="cta-btn">Get Started</a>
     <% } %>
@@ -16,4 +17,17 @@
   <section class="card-grid">
     <%- typeof productCards !== 'undefined' ? productCards : '' %>
   </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const wordEl = document.getElementById("hoverToChange");
+      const letters = wordEl.textContent.split('');
+      wordEl.innerHTML = letters
+        .map(letter => {
+          return letter === ' '
+            ? ' '
+            : `<span class="hoverToBig">${letter}</span>`;
+        })
+        .join('');
+    });
+  </script>
 </main>

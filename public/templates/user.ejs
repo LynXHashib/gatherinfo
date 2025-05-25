@@ -28,7 +28,7 @@
             </p>
             <% } %>
             <div id="desc-display" class="user-description">
-              <span id="desc-text"><%= user.userinfo || "Click to add a description about yourself." %></span>
+              <span id="desc-text"><%= user.userinfo %></span>
               <a
                 href="#"
                 id="edit-desc-btn"
@@ -38,15 +38,23 @@
                 <i class="fas fa-edit"></i>
               </a>
             </div>
-            <form
-              id="desc-form"
-              class="desc-form"
-              action="/user"
-              method="POST"
-            >
-              <textarea name="description" id="desc-input" placeholder="Add a description about yourself" maxlength="240" required><%= user.description ? user.description.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '' %></textarea>
+            <form id="desc-form" class="desc-form" action="/user" method="POST">
+              <textarea
+                name="description"
+                id="desc-input"
+                maxlength="240"
+                required
+              >
+<%= user.userinfo %></textarea
+              >
               <button type="submit" class="post-btn">Save</button>
-              <button type="button" id="desc-cancel" class="post-btn cancel-btn">Cancel</button>
+              <button
+                type="button"
+                id="desc-cancel"
+                class="post-btn cancel-btn"
+              >
+                Cancel
+              </button>
             </form>
           </div>
         </div>

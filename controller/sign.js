@@ -12,6 +12,7 @@ const signUp = async (req, res) => {
       lastName: req.body.lastName || '',
       email: req.body.email,
       password: req.body.password,
+      userinfo: 'Its empty',
     });
     req.session.user = user;
     return res.status(201).redirect('/?msg=Signed+UP+successfully!');

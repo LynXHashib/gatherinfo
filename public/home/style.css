@@ -70,6 +70,17 @@ body {
   padding: 0 2vw 40px 2vw;
 }
 
+.hoverToBig {
+  display: inline-block;
+  transition: font-size 1s ease;
+  white-space: pre-wrap;
+}
+
+.hoverToBig:hover {
+  transform: scale(1.6);
+  transition: font-size 1s ease;
+}
+
 .card {
   background: #fff;
   border-radius: 18px;
@@ -548,17 +559,18 @@ input[type=submit]:focus {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 80vh;
-  padding: 3em 0;
+  min-height: 60vh;
+  padding: 8em 0;
   background: linear-gradient(120deg, #a63446 0%, #0c6291 100%, #fbfef9 100%);
 }
 
 .user-card {
   background: #fff;
+  border: solid 2px #7e1946;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(12, 98, 145, 0.1);
   padding: 2.5em 2.5em 2em 2.5em;
-  max-width: 380px;
+  max-width: 480px;
   width: 100%;
   display: flex;
   flex-direction: column;
