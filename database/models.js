@@ -1,4 +1,3 @@
-const { name } = require('ejs');
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.ObjectId;
 
@@ -39,6 +38,9 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
+    },
+    userinfo: {
+      type: String,
     },
   },
   { timestamps: true }

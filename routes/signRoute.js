@@ -1,7 +1,10 @@
 const express = require('express');
 const { signUp, login, logout } = require('../controller/sign');
+const { authCheck, restrictToLogin } = require('../middlewares/restriction');
+const { userProfile, userDescriptionEdit } = require('../controller/user');
 const router = express.Router();
 router.route('/signup').get(signUp).post(signUp);
 router.route('/login').get(login).post(login);
 router.route('/logout').get(logout).post(logout);
+router.route('/', restrictToLogin).get(userProfile).post(userDescriptionEdit);
 module.exports = router;

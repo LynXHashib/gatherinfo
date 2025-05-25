@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile | GatherInfo</title>
+    <link rel="stylesheet" href="/home/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <%- include('header.ejs') %>
+    <main>
+      <section class="user-profile-section">
+        <div class="user-card">
+          <div class="user-avatar">
+            <img src="/productImage/default.png" alt="User Avatar" />
+          </div>
+          <div class="user-info">
+            <h2><%= user.firstName %> <%= user.lastName %></h2>
+            <p class="user-email"><%= user.email %></p>
+            <% if (user.createdAt) { %>
+            <p class="user-joined">
+              Joined: <%= new Date(user.createdAt).toLocaleDateString() %>
+            </p>
+            <% } %>
+            <div id="desc-display" class="user-description">
+              <span id="desc-text"><%= user.userinfo || "Click to add a description about yourself." %></span>
+              <a
+                href="#"
+                id="edit-desc-btn"
+                class="edit-desc-link"
+                title="Edit description"
+              >
+                <i class="fas fa-edit"></i>
+              </a>
+            </div>
+            <form
+              id="desc-form"
+              class="desc-form"
+              action="/user"
+              method="POST"
+            >
+              <textarea name="description" id="desc-input" placeholder="Add a description about yourself" maxlength="240" required><%= user.description ? user.description.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '' %></textarea>
+              <button type="submit" class="post-btn">Save</button>
+              <button type="button" id="desc-cancel" class="post-btn cancel-btn">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('footer.ejs') %>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const editBtn = document.getElementById('edit-desc-btn');
+        const descDisplay = document.getElementById('desc-display');
+        const descForm = document.getElementById('desc-form');
+        const cancelBtn = document.getElementById('desc-cancel');
+        if (editBtn && descDisplay && descForm && cancelBtn) {
+          editBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            descDisplay.style.display = 'none';
+            descForm.classList.add('open');
+            setTimeout(() => {
+              document.getElementById('desc-input').focus();
+            }, 350);
+          });
+          cancelBtn.addEventListener('click', function () {
+            descForm.classList.remove('open');
+            setTimeout(() => {
+              descDisplay.style.display = 'block';
+            }, 400); // Wait for animation to finish
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

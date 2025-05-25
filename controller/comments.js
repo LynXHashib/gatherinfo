@@ -4,8 +4,6 @@ const comments = mongoose.model('comments', commentSchema);
 const users = mongoose.model('users', userSchema);
 const commentBox = async (req, res) => {
   const postID = req.query.id;
-
-  const id = req.session.user._id || '';
   if (!req.session.user) {
     const { name, email, comment, password } = req.body;
     await users.create({
@@ -14,12 +12,15 @@ const commentBox = async (req, res) => {
       password: password,
     });
     const user = await users.findOne({ email: email });
+    req.session.user = user;
     await comments.create({
-      createdBy: user.id,
+      createdBy: user._id,
       postId: postID,
       comment: comment,
     });
+    res.redirect(`/info?id=${postID}&?msg=Comment+Successful`);
   } else {
+    const id = req.session.user._id;
     const { comment } = req.body;
     await comments.create({
       createdBy: id,
