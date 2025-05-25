@@ -1,9 +1,12 @@
 <figure class="card">
-  <img
-    class="card__image"
-    src="/productImage/<%= image %>"
-    alt="<%= productName %>"
-  />
+  <a href="/info?id=<%= id %>" class="card__image-link" tabindex="-1">
+    <img
+      class="card__image"
+      src="/productImage/<%= image %>"
+      alt="<%= productName %>"
+      loading="lazy"
+    />
+  </a>
   <div class="card__title-box">
     <h2 class="card__title"><%= productName %></h2>
   </div>

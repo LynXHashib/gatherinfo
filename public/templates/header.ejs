@@ -1,19 +1,19 @@
 <header class="main-header">
-  <div class="header-content">
-    <a href="/" style="text-decoration: none; color: white">
-      <h1>GatherInfo</h1>
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <img src="/base-images/favicon.png" alt="GatherInfo Logo" />
+      <span>GatherInfo</span>
     </a>
-    <p>Your one-stop destination for everything</p>
-    <nav class="main-nav">
-      <a href="/api/contacts">Contacts</a>
-      <a href="/about">About Me</a>
-      <a href="/post">Post</a>
-      <% if (!isLoggedIn) { %>
-      <a href="/user/signup">Sign Up</a>
-      <a href="/user/login">Login</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <% if (isLoggedIn) { %>
+      <li><a href="/user/logout" class="nav-btn">Logout</a></li>
       <% } else { %>
-      <a href="/user/logout">Logout</a>
+      <li><a href="/user/login" class="nav-btn">Login</a></li>
+      <li><a href="/user/signup" class="nav-btn signup">Sign Up</a></li>
       <% } %>
-    </nav>
-  </div>
+    </ul>
+  </nav>
 </header>

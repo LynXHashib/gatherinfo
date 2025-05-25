@@ -1,558 +1,568 @@
-// Modern Color Palette
-$primary-dark: #32292f;
-$primary-accent: #99e1d9;
-$background: #f0f7f4;
-$secondary: #70abaf;
-$neutral: #705d56;
+// Color Palette
+$primary: #a63446;
+$secondary: #0c6291;
+$accent: #7e1946;
+$bg: #fbfef9;
+$card-bg: #fff;
+$text: #000004;
+$muted: #7e1946;
+$shadow: 0 6px 32px rgba(12, 98, 145, 0.08);
 
-$primary-gradient: linear-gradient(135deg, $primary-dark, $secondary);
-$secondary-gradient: linear-gradient(
-  90deg,
-  $primary-accent 0%,
-  $secondary 100%
-);
-$primary-color: $secondary;
-$header-bg: $primary-gradient;
-$header-color: #fff;
-$card-bg: #f0f7f4;
-$card-border: #99e1d9;
-$card-radius: 14px;
-$shadow: 0 4px 16px rgba(50, 41, 47, 0.08);
-$shadow-hover: 0 8px 24px rgba(50, 41, 47, 0.15);
-$footer-bg: $primary-dark;
-$footer-color: #fff;
-
-// General Styles
+// Global Styles
 body {
-  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: $bg;
+  color: $text;
   margin: 0;
   padding: 0;
-  background-color: $background;
-  color: $primary-dark;
+  min-height: 100vh;
+}
+
+// Hero Section
+.hero {
+  background: linear-gradient(120deg, $primary 0%, $secondary 100%);
+  color: #fff;
+  padding: 60px 0 40px 0;
+  text-align: center;
+
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5em;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: $bg;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 1.5em;
+      color: lighten($bg, 10%);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: $accent;
+      color: $bg;
+      padding: 0.9em 2.2em;
+      border-radius: 30px;
+      font-size: 1.1em;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(166, 52, 70, 0.15);
+      transition: background 0.2s, transform 0.2s;
+
+      &:hover {
+        background: adjust-color($accent, $lightness: -10%);
+        color: $bg;
+        transform: translateY(-2px) scale(1.04);
+      }
+    }
+  }
+}
+
+// Alert Message
+.alert-message {
+  background: $primary;
+  color: $bg;
+  text-align: center;
+  padding: 1em 2em;
+  border-radius: 12px;
+  margin: 24px auto 0 auto;
+  max-width: 420px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 12px rgba(166, 52, 70, 0.08);
+}
+
+// Card Grid
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 0 2vw 40px 2vw;
+}
+
+// Card Style
+.card {
+  background: $card-bg;
+  border-radius: 18px;
+  box-shadow: $shadow;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: none;
+
+  &:hover {
+    box-shadow: 0 12px 32px rgba(12, 98, 145, 0.13);
+    transform: translateY(-6px) scale(1.025);
+  }
+
+  .card__image-link {
+    display: block;
+    overflow: hidden;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    transition: box-shadow 0.2s;
+
+    &:focus-visible {
+      outline: 2px solid $secondary;
+      outline-offset: 2px;
+    }
+  }
+
+  .card__image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: $muted;
+    border-bottom: 4px solid $secondary;
+    transition: transform 0.25s;
+  }
+
+  .card__image-link:hover .card__image,
+  .card__image-link:focus .card__image {
+    transform: scale(1.04);
+  }
+
+  .card__title-box {
+    padding: 1.2em 1.5em 0.2em 1.5em;
+    background: none;
+  }
+
+  .card__title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: $primary;
+    margin: 0 0 0.2em 0;
+    letter-spacing: 0.5px;
+  }
+
+  .card__desc {
+    padding: 0 1.5em 1.2em 1.5em;
+    color: $secondary;
+    font-size: 1.05em;
+    min-height: 48px;
+  }
+
+  .card__link {
+    margin: 0 1.5em 1.5em 1.5em;
+    background: $secondary;
+    color: $bg;
+    text-decoration: none;
+    padding: 0.7em 1.5em;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(12, 98, 145, 0.08);
+
+    &:hover {
+      background: $accent;
+      color: $bg;
+    }
+  }
 }
 
 // Header Styles
 .main-header {
-  background: $header-bg;
-  color: $header-color;
-  padding: 60px 20px;
-  text-align: center;
+  background: linear-gradient(90deg, $primary 0%, $secondary 100%);
+  box-shadow: 0 2px 12px rgba(12, 98, 145, 0.07);
 
-  h1 {
-    font-size: 80px;
-    margin: 0;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin: 10px 0 0;
-    opacity: 0.9;
-  }
-}
-
-.header-content {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-
-  h1 {
-    font-size: 2.5em;
-    letter-spacing: 2px;
-    margin-bottom: 1%;
-  }
-
-  p {
-    font-size: 1.1em;
-    opacity: 0.9;
-  }
-}
-
-.main-nav {
-  margin-top: 1%;
-  display: flex;
-  justify-content: center;
-  gap: 2%;
-
-  a {
-    color: $primary-accent;
-    text-decoration: none;
-    font-size: 1.1em;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    transition: background 0.3s, color 0.3s;
-    font-weight: 500;
-
-    &:hover {
-      background: rgba(153, 225, 217, 0.15);
-      color: $neutral;
-    }
-  }
-}
-
-// Main Content Styles
-main {
-  padding: 40px 20px;
-}
-
-#hiddenmsg {
-  text-align: center;
-  background: $primary-accent;
-  color: $primary-dark;
-  margin: 5px auto 0 auto;
-  max-width: 400px;
-  border-radius: 8px;
-  padding: 0.5em 1em;
-  font-weight: 500;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 32px 0;
-}
-
-.product-card,
-.card {
-  background-color: $card-bg;
-  border: 1.5px solid $card-border;
-  border-radius: $card-radius;
-  padding: 0;
-  text-align: center;
-  box-shadow: $shadow;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-  transition: box-shadow 0.3s, transform 0.3s;
-
-  &:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: $shadow-hover;
-  }
-
-  img,
-  .card__image {
-    max-width: 100%;
-    border-radius: 8px;
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-top-left-radius: $card-radius;
-    border-top-right-radius: $card-radius;
-    margin-bottom: 0;
-    background: $primary-accent;
-  }
-
-  h3,
-  .card__title {
-    margin: 15px 0 8px 0;
-    font-size: 1.4rem;
-    color: $primary-dark;
-  }
-
-  p,
-  .card__desc {
-    color: $neutral;
-    font-size: 1rem;
-    padding: 0 16px;
-    margin-bottom: 16px;
-    min-height: 48px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-
-  .price,
-  .card__detail--price {
-    font-size: 1.2rem;
-    color: #fff;
-    font-weight: bold;
-    background: $secondary-gradient;
-    padding: 5px 16px;
-    border-radius: 8px;
-    margin: 0.5em auto 0.5em auto;
-    display: inline-block;
-  }
-
-  .card__details {
+  .navbar {
     display: flex;
-    justify-content: space-around;
-    margin-top: 15px;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8em 2vw;
 
-    .card__detail-box {
-      flex: 1 1 40%;
-      padding: 10px;
-      min-width: 100px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6em;
+      font-size: 1.5em;
+      font-weight: 800;
+      color: $bg;
+      text-decoration: none;
 
-      .card__detail {
-        font-size: 1rem;
-        color: $neutral;
+      img {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+      }
 
-        &--organic {
-          color: $primary-accent;
-          font-weight: bold;
+      span {
+        letter-spacing: 1px;
+      }
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          color: $bg;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1.08em;
+          padding: 0.4em 1em;
+          border-radius: 6px;
+          transition: background 0.18s;
+
+          &:hover {
+            background: rgba(166, 52, 70, 0.13);
+          }
+        }
+
+        .nav-btn {
+          background: $primary;
+          color: $bg;
+          font-weight: 600;
+          border-radius: 18px;
+          padding: 0.4em 1.2em;
+          margin-left: 0.5em;
+          transition: background 0.18s, color 0.18s;
+
+          &:hover {
+            background: $bg;
+            color: $primary;
+          }
+        }
+
+        .signup {
+          background: $bg;
+          color: $accent;
+          margin-left: 0.5em;
+
+          &:hover {
+            background: $accent;
+            color: $bg;
+          }
         }
       }
     }
   }
-
-  .card__link {
-    display: inline-block;
-    margin: 6px 15% 16px 15%;
-    padding: 10px 18px;
-    background: $primary-color;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(112, 93, 86, 0.08);
-    text-align: center;
-
-    &:hover {
-      background: $primary-dark;
-      box-shadow: 0 4px 16px rgba(50, 41, 47, 0.12);
-      color: $primary-accent;
-    }
-  }
 }
 
-.not-organic .card__detail--organic {
-  display: none;
-}
-//    COMMENT SECTION
+// Footer
+footer {
+  background: $primary;
+  color: $bg;
+  padding: 2em 0 1em 0;
+  text-align: center;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -2px 12px rgba(12, 98, 145, 0.07);
 
-.comment-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-
-  .comment-form {
+  .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.7em;
+    font-size: 1.1em;
 
-    input,
-    textarea {
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      width: 100%;
+    .footer-nav {
+      margin-top: 0.5em;
+
+      a {
+        color: $bg;
+        margin: 0 0.7em;
+        text-decoration: none;
+        font-weight: 500;
+        opacity: 0.85;
+        transition: opacity 0.18s;
+
+        &:hover {
+          opacity: 1;
+          text-decoration: underline;
+        }
+      }
     }
+  }
+}
 
-    button {
-      align-self: flex-start;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
+// Form Section
+.form-section {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(12, 98, 145, 0.08);
+  max-width: 420px;
+  margin: 48px auto 0 auto;
+  padding: 2.5em 2em 2em 2em;
+  text-align: center;
+
+  h2 {
+    color: $primary;
+    margin-bottom: 1.2em;
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  .form-footer {
+    margin-top: 1.5em;
+    font-size: 1em;
+    color: $secondary;
+
+    .form-link {
+      color: $accent;
+      margin-left: 0.5em;
+      text-decoration: underline;
+      font-weight: 600;
 
       &:hover {
-        background-color: #0056b3;
+        color: $primary;
       }
-    }
-  }
-
-  .comments-list {
-    margin-top: 2rem;
-
-    .comment {
-      padding: 1rem;
-      border-bottom: 1px solid #ddd;
-
-      h4 {
-        margin: 0;
-        font-weight: bold;
-        color: #222;
-      }
-
-      p {
-        margin: 0.5rem 0 0;
-        color: #555;
-      }
-    }
-
-    .no-comments {
-      font-style: italic;
-      color: #777;
     }
   }
 }
 
-// Post Form Styles
-.post-form {
+// --- Forms & Inputs ---
+.post-form,
+.comment-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 3% auto 0 auto;
-  width: 60%;
-  min-width: 260px;
-  max-width: 600px;
-  background: #fff;
-  padding: 3% 4%;
-  border-radius: $card-radius;
-  box-shadow: 0 2px 12px rgba(112, 93, 86, 0.07);
+  gap: 1.1em;
+  margin-top: 1.2em;
+}
 
-  .post-input,
-  .post-title,
-  .post-image-input {
-    width: 100%;
-    font-size: 1.1em;
-    padding: 0.7em 1em;
-    margin-bottom: 1.5em;
-    border: 1.5px solid $secondary;
-    border-radius: 8px;
-    outline: none;
-    transition: border 0.2s;
-    box-sizing: border-box;
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea,
+.post-title,
+.post-input,
+.post-image-input {
+  font-family: inherit;
+  font-size: 1.08em;
+  padding: 0.85em 1.1em;
+  border: 1.5px solid $secondary;
+  border-radius: 10px;
+  background: $bg;
+  color: $text;
+  outline: none;
+  transition: border 0.18s, box-shadow 0.18s;
+  box-shadow: 0 1px 4px rgba(12, 98, 145, 0.04);
 
-    &:focus {
-      border-color: $primary-dark;
-    }
-  }
-
-  .post-input {
-    min-height: 8em;
-    resize: vertical;
-  }
-
-  .post-title {
-    min-height: 2.5em;
-  }
-
-  .post-image-input {
-    padding: 0.5em 1em;
-    background: $background;
-    font-size: 1em;
-    color: $primary-dark;
-  }
-
-  .post-btn {
-    width: 60%;
-    min-width: 120px;
-    height: 2.7em;
-    font-size: 1.1em;
-    background: $secondary-gradient;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(112, 93, 86, 0.08);
-
-    &:hover {
-      background: $primary-gradient;
-      box-shadow: 0 4px 16px rgba(153, 225, 217, 0.12);
-    }
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 2px 12px rgba(166, 52, 70, 0.1);
+    background: lighten($bg, 2%);
   }
 }
 
-// Product Details
+textarea {
+  resize: vertical;
+  min-height: 90px;
+  max-height: 320px;
+}
+
+.post-btn,
+button,
+input[type='submit'] {
+  background: $primary;
+  color: $bg;
+  font-size: 1.1em;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8em 2em;
+  margin-top: 0.5em;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(166, 52, 70, 0.08);
+  transition: background 0.18s, color 0.18s, transform 0.15s;
+
+  &:hover,
+  &:focus {
+    background: adjust-color($primary, $lightness: -10%);
+    color: $bg;
+    transform: translateY(-2px) scale(1.03);
+  }
+}
+
+// --- Product Page ---
 .product-title {
+  font-size: 2.2em;
+  font-weight: 800;
+  color: $primary;
   text-align: center;
-  font-size: 2.3em;
-  font-weight: bold;
-  margin: 3% 0 2% 0;
+  margin: 2.5rem 0 1.2rem 0;
   letter-spacing: 1px;
-  width: 100%;
-  color: $primary-dark;
 }
 
 .product-row {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 4%;
-  width: 96%;
-  margin: 0 2%;
-  padding: 0;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
   flex-wrap: wrap;
-
-  .product-image-box {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    img {
-      width: 100%;
-      max-width: 620px;
-      height: auto;
-      max-height: 280px;
-      object-fit: cover;
-      border-radius: 8%;
-      box-shadow: 0 2px 12px rgba(112, 93, 86, 0.1);
-      background: $primary-accent;
-      display: block;
-      margin: 0 auto;
-    }
-  }
-
-  .ad-space {
-    width: 48%;
-    min-height: 30%;
-    background: $primary-accent;
-    border: 2px dashed $neutral;
-    border-radius: 6%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $neutral;
-    font-size: 1.3em;
-    font-weight: 500;
-    box-shadow: 0 2px 8px rgba(112, 93, 86, 0.07);
-    margin-left: 0;
-  }
 }
 
-.product-description-row {
-  width: 92%;
-  margin: 2% auto;
-  padding: 2% 2%;
+.product-image-box {
   background: #fff;
-  border-radius: 3%;
-  box-shadow: 0 2px 8px rgba(153, 225, 217, 0.07);
-  font-size: 1.1em;
-  line-height: 1.7;
-  color: $primary-dark;
-  text-align: left;
-}
-
-// Footer Styles
-footer {
-  background: $footer-bg;
-  color: $footer-color;
-  text-align: center;
-  padding: 4% 0;
-  margin-top: 2%;
-  font-size: 1.1em;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  letter-spacing: 1px;
-}
-
-// Author Actions Styles
-.author-actions {
-  margin-top: 2em;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(12, 98, 145, 0.08);
+  padding: 1.5em;
   display: flex;
-  gap: 1.5em;
   align-items: center;
+  justify-content: center;
+  min-width: 600px;
+  min-height: 260px;
+}
+.product-image-box img {
+  max-width: 600px;
+  max-height: 320px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(12, 98, 145, 0.1);
+  background: $muted;
 }
 
-.author-link,
-.author-actions .author-link,
-.author-actions button.author-link {
-  background: none;
-  border: none;
-  color: $primary-dark;
-  font-size: 1em;
-  font-weight: 500;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  text-decoration: underline;
-  transition: color 0.2s;
-  box-shadow: none;
-  display: inline;
-}
-
-.edit-link {
+.ad-space {
+  flex: 1 1 200px;
+  min-height: 120px;
+  background: linear-gradient(90deg, $bg 60%, $secondary 100%);
+  border-radius: 14px;
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: $secondary;
-}
-.edit-link:hover {
-  color: $primary-accent;
-  text-decoration: underline;
+  font-size: 1.1em;
+  opacity: 0.7;
 }
 
+// --- Product Description & Author Actions ---
+.product-description-row {
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(12, 98, 145, 0.08);
+  padding: 2em 2em 1.5em 2em;
+  font-size: 1.15em;
+  color: $text;
+  line-height: 1.7;
+  position: relative;
+}
+
+.author-actions {
+  display: flex;
+  gap: 1em;
+  margin: 1.5em 0 0.5em 0;
+}
+.author-link {
+  display: inline-block;
+  padding: 0.5em 1.3em;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background 0.18s, color 0.18s;
+}
+.edit-link {
+  background: $secondary;
+  color: $bg;
+  &:hover {
+    background: adjust-color($secondary, $lightness: -10%);
+  }
+}
 .delete-link {
-  color: #d9534f;
-}
-.delete-link:hover {
-  color: #b52a23;
-  text-decoration: underline;
-}
-
-// Responsive
-@media (max-width: 1000px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+  background: $accent;
+  color: $bg;
+  &:hover {
+    background: adjust-color($accent, $lightness: -10%);
   }
 }
 
+// --- Comments Section ---
+.comment-section {
+  margin-top: 2.5em;
+  padding-top: 2em;
+  border-top: 1.5px solid $secondary;
+}
+.comment-section h2 {
+  color: $primary;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+.comments-list {
+  margin-top: 1.5em;
+}
+.comment {
+  background: $bg;
+  border-left: 4px solid $primary;
+  border-radius: 8px;
+  padding: 1em 1.2em;
+  margin-bottom: 1.2em;
+  box-shadow: 0 1px 6px rgba(12, 98, 145, 0.06);
+}
+.comment h4 {
+  margin: 0 0 0.3em 0;
+  color: $secondary;
+  font-size: 1.08em;
+  font-weight: 700;
+}
+.comment p {
+  margin: 0;
+  color: $text;
+  font-size: 1em;
+}
+.no-comments {
+  color: $muted;
+  font-style: italic;
+  text-align: center;
+  margin-top: 1em;
+}
+
+// --- Responsive Tweaks ---
 @media (max-width: 900px) {
-  .main-header h1 {
-    font-size: 2.2em;
-  }
   .product-row {
     flex-direction: column;
     align-items: center;
-    gap: 2%;
-    width: 98%;
-    margin: 0 1%;
-
-    .product-image-box,
-    .ad-space {
-      width: 96%;
-      margin: 0 2%;
-    }
+    gap: 1.5rem;
   }
-
+  .product-image-box img {
+    max-width: 90vw;
+    max-height: 240px;
+  }
   .product-description-row {
-    width: 98%;
-    margin: 2% 1% 0 1%;
-    padding: 2% 2%;
-    font-size: 1em;
-  }
-
-  .product-title {
-    font-size: 1.5em;
+    padding: 1.2em 0.7em 1em 0.7em;
   }
 }
 
-@media (max-width: 600px) {
-  .main-header {
-    padding: 1.5rem 0.5rem;
-  }
-  .main-header h1 {
-    font-size: 1.3em;
-  }
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+@media (max-width: 700px) {
+  .hero-content h1 {
+    font-size: 2rem;
   }
 
   .card__image {
     height: 140px;
   }
-  .post-form {
-    padding: 1rem 0.5rem;
-  }
-  footer {
-    padding: 1rem 0;
-    font-size: 1em;
+
+  .card-grid {
+    gap: 1.2rem;
+    padding: 0 0.5rem 2rem 0.5rem;
   }
 }

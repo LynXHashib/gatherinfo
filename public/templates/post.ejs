@@ -3,46 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POST A NEWS</title>
+    <title><%= POST ? "Edit Post" : "Create Post" %> | GatherInfo</title>
     <link rel="stylesheet" href="/home/style.css" />
   </head>
   <body>
     <%- include('header.ejs') %>
     <main>
-      <form
-        class="post-form"
-        method="POST"
-        action="/post/<%= POST %>?id=<%= ID%>"
-      >
-        <input
-          type="text"
-          id="post-in"
-          class="post-title"
-          name="title"
-          value="<%= TITLE %>"
-          placeholder="Title"
-          required
-        />
-        <textarea
-          id="post-in"
-          class="post-input"
-          name="description"
-          rows="6"
-          placeholder="Write your POST..."
-          required
+      <section class="form-section">
+        <h2><%= POST ? "Edit Post" : "Create a New Post" %></h2>
+        <form
+          class="post-form"
+          method="POST"
+          action="/post/<%= POST %>?id=<%= ID%>"
         >
+          <input
+            type="text"
+            id="post-in"
+            class="post-title"
+            name="title"
+            value="<%= TITLE %>"
+            placeholder="Title"
+            required
+          />
+          <textarea
+            id="post-in"
+            class="post-input"
+            name="description"
+            rows="6"
+            placeholder="Write your post..."
+            required
+          >
 <%= VALUE %></textarea
-        >
-        <input
-          type="text"
-          id="post-image"
-          class="post-image-input"
-          value="<%= IMAGE %>"
-          name="image"
-          placeholder="IMAGE NAME"
-        />
-        <button type="submit" class="post-btn">Submit</button>
-      </form>
+          >
+          <input
+            type="text"
+            id="post-image"
+            class="post-image-input"
+            value="<%= IMAGE %>"
+            name="image"
+            placeholder="Image Name"
+          />
+          <button type="submit" class="post-btn">
+            <%= POST ? "Update" : "Submit" %>
+          </button>
+        </form>
+      </section>
     </main>
     <%- include('footer.ejs') %>
   </body>

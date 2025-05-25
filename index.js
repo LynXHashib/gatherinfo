@@ -1,4 +1,3 @@
-const Analytics = require('@vercel/analytics');
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -6,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const { authCheck, restrictToLogin } = require('./middlewares/restriction');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 const dotenv = require('dotenv').config();
 const mongodb = process.env.MONGO;
@@ -54,6 +55,7 @@ app.use('/info', cardRoute);
 app.use('/post', restrictToLogin, postRoute);
 app.use('/user', signRoute);
 app.use('/api/contacts', contacts);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(error404);
 
 module.exports = app;

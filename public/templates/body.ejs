@@ -1,10 +1,19 @@
-<h3 id="hiddenmsg">
-  <%= typeof hiddenMessage !== 'undefined' ? hiddenMessage : '' %>
-</h3>
-<main>
-  <div id="product-container" class="product-grid">
-    <%- typeof productCards !== 'undefined' ? productCards : '' %>
+<section class="hero">
+  <div class="hero-content">
+    <h1>GatherInfo</h1>
+    <p>Discover, share, and discuss the latest insights and products.</p>
+    <% if (!isLoggedIn) { %>
+    <a href="/user/signup" class="cta-btn">Get Started</a>
+    <% } %>
   </div>
+</section>
 
-  <!-- Comment Section -->
+<% if (typeof hiddenMessage !== 'undefined' && hiddenMessage) { %>
+<div class="alert-message"><%= hiddenMessage %></div>
+<% } %>
+
+<main>
+  <section class="card-grid">
+    <%- typeof productCards !== 'undefined' ? productCards : '' %>
+  </section>
 </main>
