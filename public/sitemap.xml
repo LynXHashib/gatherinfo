@@ -4,47 +4,62 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
-  <loc>https://gatherinfo.onrender.com/</loc>
-  <lastmod>2025-05-24T10:18:09+00:00</lastmod>
+  <loc>https://gatherinfo.vercel.app/</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://gatherinfo.onrender.com/user/login</loc>
-  <lastmod>2025-05-24T10:18:09+00:00</lastmod>
+  <loc>https://gatherinfo.vercel.app/user/login</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gatherinfo.onrender.com/user/signup</loc>
-  <lastmod>2025-05-24T10:18:09+00:00</lastmod>
+  <loc>https://gatherinfo.vercel.app/user/signup</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gatherinfo.onrender.com/info?id=6829cb8f700b2fbdc1d0f01d</loc>
-  <lastmod>2025-05-24T10:18:09+00:00</lastmod>
+  <loc>https://gatherinfo.vercel.app/info?id=6829cb8f700b2fbdc1d0f01d</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gatherinfo.onrender.com/info?id=6829e487bdf6cfd7ffbebde5</loc>
-  <lastmod>2025-05-24T10:18:09+00:00</lastmod>
+  <loc>https://gatherinfo.vercel.app/info?id=6829e487bdf6cfd7ffbebde5</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gatherinfo.onrender.com/info?id=6829e4c5bdf6cfd7ffbebde7</loc>
-  <lastmod>2025-05-24T10:18:09+00:00</lastmod>
+  <loc>https://gatherinfo.vercel.app/info?id=6829e4c5bdf6cfd7ffbebde7</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gatherinfo.onrender.com/info?id=6829ee3e4fd6bf2d6d9eb13b</loc>
-  <lastmod>2025-05-24T10:18:09+00:00</lastmod>
+  <loc>https://gatherinfo.vercel.app/info?id=6829ee3e4fd6bf2d6d9eb13b</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gatherinfo.onrender.com/info?id=682dc6b9bd284c2b0a286ed7</loc>
-  <lastmod>2025-05-24T10:18:09+00:00</lastmod>
+  <loc>https://gatherinfo.vercel.app/info?id=682dc6b9bd284c2b0a286ed7</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gatherinfo.vercel.app/info?id=683218cad61b8aea3d953eff</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gatherinfo.vercel.app/info?id=6835fb60a70c69de2bf60b2f</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gatherinfo.vercel.app/info?id=6837ddf89262ac42f794c986</loc>
+  <lastmod>2025-05-30T10:57:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
