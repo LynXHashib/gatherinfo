@@ -19,9 +19,9 @@ const cardOverview = async (req, res) => {
     .populate('createdBy');
   const metaDescription = blogWait.description || '';
   if (metaDescription.length > 80) {
-    blogWait.description = metaDescription.substring(0, 77) + '...';
-  } else {
-    blogWait.description = metaDescription;
+    metaDescription = metaDescription.substring(0, 80) + '...';
+  } else if (metaDescription.length === 0) {
+    metaDescription = 'No description available';
   }
   res.status(200).render('productPage', {
     productName: blogWait.title,
