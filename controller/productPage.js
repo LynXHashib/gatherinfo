@@ -17,7 +17,7 @@ const cardOverview = async (req, res) => {
   const comment = await comments
     .find({ postId: blogWait._id })
     .populate('createdBy');
-  const metaDescription = blogWait.description || '';
+  let metaDescription = blogWait.description || '';
   if (metaDescription.length > 80) {
     metaDescription = metaDescription.substring(0, 80) + '...';
   } else if (metaDescription.length === 0) {
