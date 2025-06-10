@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { blogSchema, userSchema, commentSchema } = require('../database/models');
 const Blog = mongoose.model('blogs', blogSchema);
-const users = mongoose.model('users', userSchema);
 const comments = mongoose.model('comments', commentSchema);
 const cardOverview = async (req, res) => {
   let id = req.query.id;
